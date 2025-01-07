@@ -1,6 +1,6 @@
 <?php
-session_start();
-ob_start();
+/* session_start(); */
+/* ob_start(); */
 
 date_default_timezone_set('America/Mexico_city');
 
@@ -13,7 +13,7 @@ $username = "root";
 $password = "";
 $dbname = "titulos_se";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli("localhost", "root", "", "titulos_se");
 
 // Verificar la conexión
 if ($conn->connect_error) {
@@ -69,5 +69,5 @@ if ($_FILES["archivo"]['name'] != "") {
 	echo $status;
 }
 $conn->close();
-$url = "Location: subir_datos_titulos.php";
-header($url);
+/* $url = "Location: subir_datos_titulos.php"; */
+/* header($url); */

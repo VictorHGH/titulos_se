@@ -2,7 +2,7 @@
 //echo $_SERVER['REMOTE_ADDR'];exit();
 $_SERVER['REMOTE_ADDR'] = '127.0.0.1';
 if ($_SERVER['REMOTE_ADDR'] == '148.206.100.92' || $_SERVER['REMOTE_ADDR'] == '127.0.0.1') {
-	session_start();
+	/* session_start(); */
 	if (!isset($_SESSION['truncate'])) {
 		$_SESSION['truncate'] = 0;
 	}
