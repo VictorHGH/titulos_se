@@ -63,5 +63,5 @@ if ($_FILES["archivo"]['name'] != "") {
 	echo $status;
 }
 $conn->close();
-$url = "Location: subir_datos_titulos.php";
+$url = "Location: index.html";
 header($url);
