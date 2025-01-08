@@ -8,12 +8,7 @@ $status = "";
 $fecha_inicia_entrega = $_POST['fecha_inicia_entrega'];
 
 // Conexión a la base de datos (asumiendo que ya tienes una conexión establecida)
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "titulos_se";
-
-$conn = new mysqli("localhost", "root", "", "titulos_se");
+require_once './conexion_db.php';
 
 // Verificar la conexión
 if ($conn->connect_error) {
@@ -53,10 +48,9 @@ if ($_FILES["archivo"]['name'] != "") {
 			$query_insert = "INSERT INTO `titulos_se`.`historico_entrega_titulos`(`matricula`, `nombre`, `genero`, `mail`, `grado`, `carrera`, `fecha_elaboracion`, `fecha_inicia_entrega`, `fecha_upload`, `fecha_entrega`, `observaciones`) VALUES ('$matricula', '$nombre', '$genero', '$mail', '$grado', '$carrera', '$fecha_elaboracion', '$fecha_inicia_entrega', '$fecha_upload', '$fecha_entrega', '$observaciones')";
 			//echo '<br>'.$query_insert;
 			$regreso = $conn->query($query_insert);
-			var_dump($regreso);
 			if ($regreso === TRUE) {
-				//$url = "Location: subir_datos_titulos.php";
-				//	header($url);
+				$url = "Location: subir_datos_titulos.php";
+				header($url);
 			} else {
 				echo "Error al insertar datos, intentelo nuevamente: "; // . $conn->error;<br>
 			}

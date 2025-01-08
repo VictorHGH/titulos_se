@@ -8,12 +8,7 @@ $status = "";
 $fecha_inicia_entrega = $_POST['fecha_inicia_entrega'];
 
 // Conexión a la base de datos (asumiendo que ya tienes una conexión establecida)
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "titulos_se";
-
-$conn = new mysqli("127.0.0.1", "root", "", "titulos_se");
+require_once "./conexion_db.php";
 
 // Verificar la conexión
 if ($conn->connect_error) {

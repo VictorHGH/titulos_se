@@ -9,13 +9,9 @@
 	<?php
 	$matricula = $_POST['matricula'];
 	
-	// Conexión a la base de datos (asumiendo que ya tienes una conexión establecida)
-	$servername = "localhost";
-	$username = "titulos";
-	$password = "titulos";
-	$dbname = "titulos_se";
-
-	$conn = new mysqli($servername, $username, $password, $dbname);
+	// Conexion a la base de datos
+	require_once './conexion_db.php';
+	
 
 	if ($conn->connect_error) {
 		die("Conexión fallida: " . $conn->connect_error);	
