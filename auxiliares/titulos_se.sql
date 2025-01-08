@@ -28,10 +28,10 @@ CREATE TABLE `historico_entrega_titulos`  (
   `mail` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `grado` varchar(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `carrera` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `fecha_elaboracion` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fecha_elaboracion` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `fecha_inicia_entrega` date NOT NULL,
   `fecha_upload` datetime NOT NULL,
-  `fecha_entrega` date NULL DEFAULT NULL,
+  `fecha_entrega` varchar(30) NULL DEFAULT NULL,
   `titulo_entregado` int(1) NULL DEFAULT 0 COMMENT '1 - entregado, 0 - sin entregar',
   `observaciones` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   PRIMARY KEY (`matricula`, `grado`, `fecha_elaboracion`) USING BTREE
