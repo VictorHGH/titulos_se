@@ -6,12 +6,9 @@ use App\Core\Controller;
 
 class UserController extends Controller {
 
-	public function index() : string {
+	public function index() {
 
-		return $this->view('index', [
-			'title' => 'Home Page',
-			'description' => 'Esta es la página de inicio'
-		]);
+		return $this->view('/App/Domains/User/Views/index');
 
 	}
 }
